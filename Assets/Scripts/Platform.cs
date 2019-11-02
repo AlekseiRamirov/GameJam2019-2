@@ -7,6 +7,8 @@ public class Platform : MonoBehaviour
     [SerializeField]
     private GameObject objectAttached;
 
+    [SerializeField]
+    private PaintBar paintBar;
 
     public SpriteRenderer renderObjectAttached;
     public BoxCollider2D boxColliderObject;
@@ -16,6 +18,7 @@ public class Platform : MonoBehaviour
     public bool objectHasCollider = false;
     public bool objectIsPainted = false;
     public string nameObject;
+    public int quantityPaintLose;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +52,9 @@ public class Platform : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            paintBar.LosePaint(quantityPaintLose);
             Paint();
+            paintBar.GameOver();
         }
     }
 
