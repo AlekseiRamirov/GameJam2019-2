@@ -22,10 +22,18 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Crouch",
+                    "name": "Paint",
                     "type": "Value",
                     "id": "9da6026e-3e3c-420d-97fd-4f640f9ac3d2",
                     "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Change",
+                    "type": "Button",
+                    "id": "36af9956-44c8-4b87-b830-68dc4ca46a0a",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 }
@@ -137,18 +145,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Crouch",
+                    "action": "Paint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "ec5bbbdf-e8b1-48c9-8587-4ae1bd144bf4",
-                    "path": "<Keyboard>/downArrow",
+                    "id": "32b35eec-211e-4616-bfd8-0bd3d6e598b4",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Crouch",
+                    "action": "Change",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
