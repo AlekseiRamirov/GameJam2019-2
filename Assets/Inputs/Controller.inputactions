@@ -22,10 +22,10 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Cround",
+                    "name": "Crouch",
                     "type": "Value",
                     "id": "9da6026e-3e3c-420d-97fd-4f640f9ac3d2",
-                    "expectedControlType": "Touch",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
                 }
@@ -137,7 +137,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Cround",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -148,7 +148,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Cround",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -25,8 +25,8 @@ public class PlayerMain : MonoBehaviour
 
     void OnCrouch(InputValue value)
     {
-        //_crouch = true;
-        Debug.Log("crouch" );
+        _crouch = (int)value.Get<float>() != 0;
+        Debug.Log("crouch" + (int)value.Get<float>());
 
     }
     // Start is called before the first frame update
