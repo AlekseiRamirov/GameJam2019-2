@@ -16,19 +16,24 @@ public class PlayerMain : MonoBehaviour
     void OnHorizontal(InputValue value)
     {
         _horizontal = value.Get<float>();
-        Debug.Log("hor" + _horizontal);
     }
 
     void OnJump()
     {
-        _jump = true;
+        if (active)
+        {
+            _jump = true;
+        }   
     }
 
-    void OnCrouch(InputValue value)
+    /*void OnCrouch(InputValue value)
     {
         _crouch = (int)value.Get<float>() != 0;
-        Debug.Log("crouch" + (int)value.Get<float>());
 
+    }*/
+    void OnChange()
+    {
+        active = !active;
     }
     // Start is called before the first frame update
     void Start()
@@ -39,8 +44,7 @@ public class PlayerMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
-            active = !active;
+       
     }
 
     void FixedUpdate()

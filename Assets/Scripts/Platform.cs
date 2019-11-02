@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Platform : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class Platform : MonoBehaviour
     public bool objectIsPainted = false;
     public string nameObject;
     public int quantityPaintLose;
-
+    private bool paint = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,10 @@ public class Platform : MonoBehaviour
     {
 
     }
+    void OnPaint(InputValue value)
+    {
+        paint = (int)value.Get<float>() != 0;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -50,7 +55,7 @@ public class Platform : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             paintBar.LosePaint(quantityPaintLose);
             Paint();
