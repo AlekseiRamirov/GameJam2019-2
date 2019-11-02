@@ -9,6 +9,7 @@ public class PlayerMain : MonoBehaviour
     private float _horizontal;
     private bool _crouch = false;
     private bool _jump = false;
+    [SerializeField] private bool active = true;
     [SerializeField] private float _walkSpeed = 40f;
 
 
@@ -38,13 +39,17 @@ public class PlayerMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.X))
+            active = !active;
     }
 
     void FixedUpdate()
     {
-        // Move our character
-        _controller.Move(_horizontal * Time.fixedDeltaTime * _walkSpeed, _crouch, _jump);
-        _jump = false;
+        if (active)
+        {
+            // Move our character
+            _controller.Move(_horizontal * Time.fixedDeltaTime * _walkSpeed, _crouch, _jump);
+            _jump = false;
+        }
     }
 }
