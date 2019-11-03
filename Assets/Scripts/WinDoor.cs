@@ -11,7 +11,7 @@ public class WinDoor : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            PlayerMain.Win(nextScene);
+            SceneManager.LoadScene(nextScene);
         }
     }
 }
