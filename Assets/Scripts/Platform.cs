@@ -61,7 +61,8 @@ public class Platform : MonoBehaviour
         {
             paintBar.LosePaint(quantityPaintLose);
             Paint();
-            paintBar.GameOver();
+            if (paintBar.GetQuantityPaint() <= 0)
+                PlayerMain.Restart();
         }
     }
 

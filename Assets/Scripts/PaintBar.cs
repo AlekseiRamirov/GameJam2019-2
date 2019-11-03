@@ -32,7 +32,7 @@ public class PaintBar : MonoBehaviour
 
     public void GameOver()
     {
-        if (GetQuantityPaint()<1)
+        if (GetQuantityPaint() < 1)
         {
             SceneManager.LoadScene(nameScene);
         }
