@@ -66,7 +66,15 @@ public class Platform : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            paintBar.LosePaint(quantityPaintLose);
+            Paint();
+            if (paintBar.GetQuantityPaint() <= 0)
+                PlayerMain.Restart();
+        }
         checkPlatform = true;
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)

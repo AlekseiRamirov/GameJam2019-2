@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine ;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMain : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerMain : MonoBehaviour
     private Transform player;
     [SerializeField] private bool active = true;
     [SerializeField] private float _walkSpeed = 40f;
+    public TransitionMain transition;
 
 
     void OnHorizontal(InputValue value)
@@ -40,7 +42,8 @@ public class PlayerMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (transform.position.y < -10)
+            Restart();
     }
 
     void FixedUpdate()
@@ -51,6 +54,11 @@ public class PlayerMain : MonoBehaviour
             _controller.Move(_horizontal * Time.fixedDeltaTime * _walkSpeed, _crouch, _jump);
             _jump = false;
         }
+    }
+
+    public static void Restart()
+    {
+        GameObject.Find("Transition").GetComponent<TransitionMain>().Restart();
     }
 
     void OnCollisionStay2D(Collision2D collision)
@@ -67,5 +75,6 @@ public class PlayerMain : MonoBehaviour
         {
             player.transform.parent = null;
         }
+
     }
 }
