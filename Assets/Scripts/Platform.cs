@@ -20,7 +20,8 @@ public class Platform : MonoBehaviour
     public bool objectIsPainted = false;
     public string nameObject;
     public int quantityPaintLose;
-    private bool paint = false;
+    private bool checkPlatform = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +36,18 @@ public class Platform : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        if (Input.GetKeyDown(KeyCode.Q) && checkPlatform)
+        {
+            paintBar.LosePaint(quantityPaintLose);
+            Paint();
+            paintBar.GameOver();
+        }
     }
-    void OnPaint(InputValue value)
+    void OnPaint()
     {
-        paint = (int)value.Get<float>() != 0;
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -57,16 +63,12 @@ public class Platform : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            paintBar.LosePaint(quantityPaintLose);
-            Paint();
-            paintBar.GameOver();
-        }
+        checkPlatform = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        checkPlatform = false;
         if (!objectIsPainted)
         {
             renderObjectAttached.color = unAlphaObject;
