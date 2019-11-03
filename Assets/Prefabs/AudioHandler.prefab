@@ -140,5 +140,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1ea621202425a4db42371efc12f3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winClip: {fileID: 0}
-  paintClip: {fileID: 0}
+  winClip: {fileID: 8300000, guid: bb3822345578d774db604ac534001ca7, type: 3}
+  paintClip: {fileID: 8300000, guid: a8b833e163bfb1b42886c99a4230a6fe, type: 3}
