@@ -36,7 +36,7 @@ AnimatorController:
   m_Name: goat
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: toGoatActive
+  - m_Name: Active
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -90,7 +90,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: toGoatActive
+    m_ConditionEvent: Active
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6831472869704440727}
@@ -143,7 +143,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 6831472869704440727}
-    m_Position: {x: 320, y: -10, z: 0}
+    m_Position: {x: 380, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -593930910618402226}
     m_Position: {x: 330, y: 80, z: 0}

@@ -7,10 +7,21 @@ using UnityEngine.EventSystems;
 public class GameMenuController : MonoBehaviour
 {
     [SerializeField] private GameObject pause;
+    private bool active = false;
     void OnPause()
     {
-        pause.SetActive(true);
-        Time.timeScale = 0;
+        if (active == false)
+        {
+            active = true;
+            pause.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            active = false;
+            pause.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
 
     public void UnPauseGame()
