@@ -11,15 +11,18 @@ public class Platform : MonoBehaviour
     [SerializeField]
     private PaintBar paintBar;
 
-    public SpriteRenderer renderObjectAttached;
-    public Collider2D colliderObject;
-    public Color unAlphaObject;
-    public Color silhouetteObjectAttached;
-    public Color fullColorObject;
-    public bool objectHasCollider = false;
-    public bool objectIsPainted = false;
-    public string nameObject;
-    public int quantityPaintLose;
+    [SerializeField]
+    private SplashPaintController splashPaintController;
+
+    private SpriteRenderer renderObjectAttached;
+    private Collider2D colliderObject;
+    private Color unAlphaObject;
+    private Color silhouetteObjectAttached;
+    private Color fullColorObject;
+    private bool objectHasCollider = false;
+    private bool objectIsPainted = false;
+    private string nameObject;
+    private int quantityPaintLose;
     private bool checkPlatform = false;
 
     // Start is called before the first frame update
@@ -84,6 +87,7 @@ public class Platform : MonoBehaviour
                 colliderObject.enabled = true;
                 objectHasCollider = true;
             }
+            splashPaintController.PlayAnimationSplash();
             renderObjectAttached.color = fullColorObject;
             objectIsPainted = true;
         }
