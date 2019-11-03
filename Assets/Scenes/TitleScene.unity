@@ -1133,8 +1133,7 @@ MonoBehaviour:
   m_SubmitAction: {fileID: -2118265929991367449, guid: c043f533b6d432647af141bdbbaebcdd,
     type: 3}
   m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: -4696220216794046212, guid: c043f533b6d432647af141bdbbaebcdd,
-    type: 3}
+  m_LeftClickAction: {fileID: 0}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
   m_ScrollWheelAction: {fileID: 0}

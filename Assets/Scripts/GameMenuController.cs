@@ -6,21 +6,21 @@ using UnityEngine.EventSystems;
 
 public class GameMenuController : MonoBehaviour
 {
-    //[SerializeField] private GameController _gameController;
+    [SerializeField] private GameObject pause;
+    void OnPause()
+    {
+        pause.SetActive(true);
+        Time.timeScale = 0;
+    }
 
     public void UnPauseGame()
     {
-        //_gameController.SetPauseState(false);
-        //_gameController.DeactivatePause();
+        Time.timeScale = 1;
+        pause.SetActive(false);
     }
 
     public void ExitMenu()
     {
         SceneManager.LoadScene("TitleScene");
-    }
-
-    public void RestartGame()
-    {
-        SceneManager.LoadScene("MainGameScene");
     }
 }
