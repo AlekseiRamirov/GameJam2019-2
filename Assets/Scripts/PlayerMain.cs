@@ -18,6 +18,8 @@ public class PlayerMain : MonoBehaviour
     public TransitionMain transition;
     private Animator animator;
 
+    private static AudioSource sndWin;
+
 
     void OnHorizontal(InputValue value)
     {
@@ -39,6 +41,7 @@ public class PlayerMain : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sndWin = GetComponent<AudioSource>();
         _controller = GetComponent<CharacterController2D>();
         player = GetComponent<Transform>();
         animator = GetComponent<Animator>();
@@ -69,6 +72,7 @@ public class PlayerMain : MonoBehaviour
     }
     public static void Win(string nextScene)
     {
+        //sndWin.Play(0);
         GameObject.Find("Transition").GetComponent<TransitionMain>().Win(nextScene);
     }
 
