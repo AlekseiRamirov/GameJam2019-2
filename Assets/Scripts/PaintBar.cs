@@ -12,6 +12,7 @@ public class PaintBar : MonoBehaviour
     public Scene currentScene;
     public string nameScene;
 
+
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();

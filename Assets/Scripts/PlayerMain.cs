@@ -13,6 +13,7 @@ public class PlayerMain : MonoBehaviour
     private Transform player;
     [SerializeField] private bool active = true;
     [SerializeField] private float _walkSpeed = 40f;
+    private float correctionTimer = 6;
     public TransitionMain transition;
 
 
@@ -44,6 +45,11 @@ public class PlayerMain : MonoBehaviour
     {
         if (transform.position.y < -10 || transform.position.y > 7)
             Restart();
+
+        if(correctionTimer <= 0)
+        player.rotation = new Quaternion(0,0,0,0);
+
+        if (correctionTimer <= 5) correctionTimer = Mathf.Max(0, correctionTimer-1);
     }
 
     void FixedUpdate()
@@ -66,11 +72,14 @@ public class PlayerMain : MonoBehaviour
         GameObject.Find("Transition").GetComponent<TransitionMain>().Win(nextScene);
     }
 
-    void OnCollisionStay2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Platform")
         {
+            //_controller.m_JumpForce /= 2;
             player.transform.parent = collision.transform;
+            player.transform.rotation = new Quaternion(0, 0, 0, 0);
+            correctionTimer = 6;
         }
     }
 
@@ -78,7 +87,9 @@ public class PlayerMain : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform")
         {
+            //_controller.m_JumpForce *= 2;
             player.transform.parent = null;
+            correctionTimer = 5;
         }
     }
 }

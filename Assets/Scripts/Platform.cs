@@ -59,7 +59,7 @@ public class Platform : MonoBehaviour
     {
         if (objectIsPainted == false && collision.gameObject.tag == "Player")
         {
-            Debug.Log("Aca entra");
+            //Debug.Log("Aca entra");
                 renderObjectAttached.color = silhouetteObjectAttached;
             
         }
