@@ -75,6 +75,5 @@ public class PlayerMain : MonoBehaviour
         {
             player.transform.parent = null;
         }
-
     }
 }
