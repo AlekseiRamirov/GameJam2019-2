@@ -24,7 +24,7 @@ public class Platform : MonoBehaviour
     private string nameObject;
     public int quantityPaintLose;
     private bool checkPlatform = false;
-    private int quantityChildsObject;
+    //private int quantityChildsObject;
 
     // Start is called before the first frame update
     void Start()
@@ -138,7 +138,7 @@ public class Platform : MonoBehaviour
                 objectHasCollider = true;
             }
             renderObjectAttached.color = fullColorObject;*/
-            Activation(gameObject);
+            Activation(objectAttached);
             objectIsPainted = true;
             if(objectAttached.GetComponent<Animator>() != null)
                     objectAttached.GetComponent<Animator>().SetTrigger("Passive");
