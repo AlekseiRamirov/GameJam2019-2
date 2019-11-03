@@ -11,7 +11,9 @@ public class WinDoor : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(nextScene);
+            PlayerMain.Win(nextScene);
+            AudioScript.playWin();
+
         }
     }
 }
