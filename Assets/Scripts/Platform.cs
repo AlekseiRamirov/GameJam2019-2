@@ -35,7 +35,7 @@ public class Platform : MonoBehaviour
         unAlphaObject = new Color(255, 255, 255, 0);
         renderObjectAttached.color = unAlphaObject;
         nameObject = objectAttached.name;
-        colliderObject.enabled = false;
+        if(colliderObject != null)colliderObject.enabled = false;
     }
 
     // Update is called once per frame
@@ -91,7 +91,8 @@ public class Platform : MonoBehaviour
             }
             renderObjectAttached.color = fullColorObject;
             objectIsPainted = true;
-            objectAttached.GetComponent<Animator>().SetTrigger("Passive");
+            if(objectAttached.GetComponent<Animator>() != null)
+                    objectAttached.GetComponent<Animator>().SetTrigger("Passive");
         }
     }
 
