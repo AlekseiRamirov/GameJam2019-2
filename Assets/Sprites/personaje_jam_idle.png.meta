@@ -1,0 +1,499 @@
+fileFormatVersion: 2
+guid: 7a757ecf208f4f64ba9c93d72c821a45
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -520936219048474714
+    second: personaje_jam_idle_0
+  - first:
+      213: 751225228337773923
+    second: personaje_jam_idle_1
+  - first:
+      213: 8285068114534481581
+    second: personaje_jam_idle_2
+  - first:
+      213: -8131889303532565830
+    second: personaje_jam_idle_3
+  - first:
+      213: 8072017350621641106
+    second: personaje_jam_idle_4
+  - first:
+      213: 7721101743620234677
+    second: personaje_jam_idle_5
+  - first:
+      213: 5098100489484599956
+    second: personaje_jam_idle_6
+  - first:
+      213: -6894792561938964769
+    second: personaje_jam_idle_7
+  - first:
+      213: -2145951567182090831
+    second: personaje_jam_idle_8
+  - first:
+      213: 682245367467079159
+    second: personaje_jam_idle_9
+  - first:
+      213: 7506297497605674593
+    second: personaje_jam_idle_10
+  - first:
+      213: 3558399583351595057
+    second: personaje_jam_idle_11
+  - first:
+      213: 3523829232629591054
+    second: personaje_jam_idle_12
+  - first:
+      213: 8663448661286927071
+    second: personaje_jam_idle_13
+  - first:
+      213: 5719089699009451162
+    second: personaje_jam_idle_14
+  - first:
+      213: 8448441327002030054
+    second: personaje_jam_idle_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: personaje_jam_idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1788
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806e1be55311fdf4da84e4d6ee27bfa4
+      internalID: -520936219048474714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1788
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d819e38a4d231a40b8085afc8d1d0b9
+      internalID: 751225228337773923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_2
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 1788
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c5ac49a22138e40a0ef3af56d3293b
+      internalID: 8285068114534481581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_3
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1788
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbb971a6bc67a94d876a0af34519255
+      internalID: -8131889303532565830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1528
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0abd7ddbb57c94793140db887d8a8d
+      internalID: 8072017350621641106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_5
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1528
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a13a506177304947aacff84bed9da7b
+      internalID: 7721101743620234677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_6
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 1528
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85329a1bba4ddb543a164a3057ffc4cd
+      internalID: 5098100489484599956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_7
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1528
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2259d292c9dd0343abb9ac3c42c4299
+      internalID: -6894792561938964769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1268
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e450540d7a906194d9c0d9ebb3a2d280
+      internalID: -2145951567182090831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_9
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1268
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8275509951a0d4449a57b1c04b34a0df
+      internalID: 682245367467079159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_10
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 1268
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2666eef31676f2468f262dd4bd0abf6
+      internalID: 7506297497605674593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_11
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1268
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42de06908360f9e40b5e093cf04ea361
+      internalID: 3558399583351595057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1008
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2640aa6db676a342b20efabd739d1ec
+      internalID: 3523829232629591054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_13
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1008
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71bd78a306b62b847979e2c64c72e373
+      internalID: 8663448661286927071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_14
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 1008
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea77651e3fb35d84d9bb9880c7998114
+      internalID: 5719089699009451162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personaje_jam_idle_15
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1008
+        width: 239
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6460f150669224abf086bd606ff8f2
+      internalID: 8448441327002030054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
