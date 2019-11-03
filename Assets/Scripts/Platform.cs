@@ -12,7 +12,7 @@ public class Platform : MonoBehaviour
     private PaintBar paintBar;
 
     public SpriteRenderer renderObjectAttached;
-    public BoxCollider2D boxColliderObject;
+    public Collider2D colliderObject;
     public Color unAlphaObject;
     public Color silhouetteObjectAttached;
     public Color fullColorObject;
@@ -25,11 +25,13 @@ public class Platform : MonoBehaviour
     void Start()
     {
         renderObjectAttached = objectAttached.GetComponent<SpriteRenderer>();
+        colliderObject = objectAttached.GetComponent<Collider2D>();
         silhouetteObjectAttached = new Color(0,0,0,255);
         fullColorObject = new Color(255, 255, 255);
         unAlphaObject = new Color(255, 255, 255, 0);
         renderObjectAttached.color = unAlphaObject;
         nameObject = objectAttached.name;
+        colliderObject.enabled = false;
     }
 
     // Update is called once per frame
@@ -55,7 +57,7 @@ public class Platform : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             paintBar.LosePaint(quantityPaintLose);
             Paint();
@@ -77,7 +79,7 @@ public class Platform : MonoBehaviour
         {
             if (!objectHasCollider)
             {
-                boxColliderObject = objectAttached.AddComponent(typeof(BoxCollider2D)) as BoxCollider2D;
+                colliderObject.enabled = true;
                 objectHasCollider = true;
             }
             renderObjectAttached.color = fullColorObject;
