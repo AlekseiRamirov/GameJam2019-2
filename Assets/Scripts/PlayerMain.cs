@@ -14,6 +14,7 @@ public class PlayerMain : MonoBehaviour
     [SerializeField] private bool active = true;
     [SerializeField] private bool magic = true;
     [SerializeField] private float _walkSpeed = 40f;
+    [SerializeField] private GameObject selec;
     public TransitionMain transition;
     private Animator animator;
 
@@ -46,7 +47,7 @@ public class PlayerMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        selec.SetActive(active);
         if (transform.position.y < -10 || transform.position.y > 7)
             Restart();
     }
@@ -88,11 +89,6 @@ public class PlayerMain : MonoBehaviour
             animator.SetBool("Jump", true);
         }
     }
-    /*public void OnLanding()
-    {
-        animator.SetBool("Jump", false);
-    }**/
-
     void OnPaint()
     {
         if (magic && active)
