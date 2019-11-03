@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine ;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -12,9 +12,10 @@ public class PlayerMain : MonoBehaviour
     private bool _jump = false;
     private Transform player;
     [SerializeField] private bool active = true;
+    [SerializeField] private bool magic = true;
     [SerializeField] private float _walkSpeed = 40f;
-    private float correctionTimer = 6;
     public TransitionMain transition;
+    private Animator animator;
 
 
     void OnHorizontal(InputValue value)
@@ -27,7 +28,8 @@ public class PlayerMain : MonoBehaviour
         if (active)
         {
             _jump = true;
-        }   
+
+        }
     }
     void OnChange()
     {
@@ -38,24 +40,22 @@ public class PlayerMain : MonoBehaviour
     {
         _controller = GetComponent<CharacterController2D>();
         player = GetComponent<Transform>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (transform.position.y < -10 || transform.position.y > 7)
             Restart();
-
-        if(correctionTimer <= 0)
-        player.rotation = new Quaternion(0,0,0,0);
-
-        if (correctionTimer <= 5) correctionTimer = Mathf.Max(0, correctionTimer-1);
     }
 
     void FixedUpdate()
     {
         if (active)
         {
+            animator.SetFloat("Speed", Mathf.Abs(_horizontal * Time.fixedDeltaTime * _walkSpeed));
             // Move our character
             _controller.Move(_horizontal * Time.fixedDeltaTime * _walkSpeed, _crouch, _jump);
             _jump = false;
@@ -67,19 +67,12 @@ public class PlayerMain : MonoBehaviour
         GameObject.Find("Transition").GetComponent<TransitionMain>().Restart();
     }
 
-    public static void Win(string nextScene)
+    void OnCollisionStay2D(Collision2D collision)
     {
-        GameObject.Find("Transition").GetComponent<TransitionMain>().Win(nextScene);
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Platform")
+        if (collision.gameObject.tag == "Platform")
         {
-            //_controller.m_JumpForce /= 2;
             player.transform.parent = collision.transform;
-            player.transform.rotation = new Quaternion(0, 0, 0, 0);
-            correctionTimer = 6;
+            animator.SetBool("Jump", false);
         }
     }
 
@@ -87,9 +80,25 @@ public class PlayerMain : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform")
         {
-            //_controller.m_JumpForce *= 2;
             player.transform.parent = null;
-            correctionTimer = 5;
+            animator.SetBool("Jump", true);
         }
     }
+    /*public void OnLanding()
+    {
+        animator.SetBool("Jump", false);
+    }**/
+
+    void OnPaint()
+    {
+        if (magic && active)
+        {
+            animator.SetBool("Magic", true);
+        }
+    }
+    public void NoPaint()
+    {
+        animator.SetBool("Magic", false);
+    }
+
 }
