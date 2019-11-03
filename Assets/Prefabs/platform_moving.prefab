@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4707060182161054598}
   m_Layer: 9
   m_Name: platform_moving
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4707060182161054605}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: b65a1355be07fb345a0fb7df3ef1ef7f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
