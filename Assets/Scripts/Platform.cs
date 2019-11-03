@@ -14,8 +14,8 @@ public class Platform : MonoBehaviour
     [SerializeField]
     private Animator splashPaintController;
 
-    private SpriteRenderer renderObjectAttached;
-    private Collider2D colliderObject;
+    //private SpriteRenderer renderObjectAttached;
+    //private Collider2D colliderObject;
     private Color unAlphaObject;
     private Color silhouetteObjectAttached;
     private Color fullColorObject;
@@ -29,14 +29,15 @@ public class Platform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        renderObjectAttached = objectAttached.GetComponent<SpriteRenderer>();
-        colliderObject = objectAttached.GetComponent<Collider2D>();
+        //SpriteRenderer renderObjectAttached = objectAttached.GetComponent<SpriteRenderer>();
+        //Collider2D colliderObject = objectAttached.GetComponent<Collider2D>();
         silhouetteObjectAttached = new Color(0,0,0,255);
         fullColorObject = new Color(255, 255, 255);
         unAlphaObject = new Color(255, 255, 255, 0);
-        renderObjectAttached.color = unAlphaObject;
+        //renderObjectAttached.color = unAlphaObject;
         nameObject = objectAttached.name;
-        if(colliderObject != null)colliderObject.enabled = false;
+        Attached(objectAttached);
+        /*if(colliderObject != null)colliderObject.enabled = false;
         quantityChildsObject = objectAttached.GetComponentsInChildren<SpriteRenderer>().Length;  
         for (int i = 0; i < quantityChildsObject; i++)
         {
@@ -44,7 +45,24 @@ public class Platform : MonoBehaviour
             {
                 objectAttached.transform.GetChild(i).GetComponent<SpriteRenderer>().color = unAlphaObject;
             }
+        }*/
+    }
+
+    public void Attached(GameObject attached)
+    {
+        SpriteRenderer renderObjectAttached = attached.GetComponent<SpriteRenderer>();
+        Collider2D colliderObject = attached.GetComponent<Collider2D>();
+        renderObjectAttached.color = unAlphaObject;
+        if(colliderObject != null)colliderObject.enabled = false;
+        int quantityChildsObject = attached.transform.childCount;
+        if (quantityChildsObject != 0)
+        {
+            for (int i = 0; i < quantityChildsObject; i++)
+            {
+                Attached(attached.transform.GetChild(i).gameObject);
+            }
         }
+        
     }
 
     // Update is called once per frame
@@ -54,7 +72,7 @@ public class Platform : MonoBehaviour
         {
             paintBar.LosePaint(quantityPaintLose);
             splashPaintController.SetTrigger("Splash");
-            //Paint();
+            Paint();
             if (paintBar.GetQuantityPaint() <= 0)
                 PlayerMain.Restart();
         }
@@ -68,15 +86,31 @@ public class Platform : MonoBehaviour
     {
         if (objectIsPainted == false && collision.gameObject.tag == "Player")
         {
+            Silhouette(objectAttached);
             //Debug.Log("Aca entra");
-                renderObjectAttached.color = silhouetteObjectAttached;
-            for (int i = 0; i < objectAttached.GetComponentsInChildren<SpriteRenderer>().Length; i++)
+                //renderObjectAttached.color = silhouetteObjectAttached;
+            /*for (int i = 0; i < objectAttached.GetComponentsInChildren<SpriteRenderer>().Length; i++)
             {
                 objectAttached.GetComponentInChildren<SpriteRenderer>().color = silhouetteObjectAttached;
-            }
+            }*/
             
         }
             
+    }
+
+    public void Silhouette(GameObject attached)
+    {
+        SpriteRenderer renderObjectAttached = attached.GetComponent<SpriteRenderer>();
+        renderObjectAttached.color = silhouetteObjectAttached;
+        int quantityChildsObject = attached.transform.childCount;
+        if (quantityChildsObject != 0)
+        {
+            for (int i = 0; i < quantityChildsObject; i++)
+            {
+                Silhouette(attached.transform.GetChild(i).gameObject);
+            }
+        }
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -89,7 +123,8 @@ public class Platform : MonoBehaviour
         checkPlatform = false;
         if (!objectIsPainted)
         {
-            renderObjectAttached.color = unAlphaObject;
+            //renderObjectAttached.color = unAlphaObject;
+            Attached(objectAttached);
         }
     }
 
@@ -97,16 +132,37 @@ public class Platform : MonoBehaviour
     {
         if (objectAttached.name == nameObject)
         {
-            if (!objectHasCollider && colliderObject != null)
+            /*if (!objectHasCollider && colliderObject != null)
             {
                 colliderObject.enabled = true;
                 objectHasCollider = true;
             }
-            renderObjectAttached.color = fullColorObject;
+            renderObjectAttached.color = fullColorObject;*/
+            Activation(gameObject);
             objectIsPainted = true;
             if(objectAttached.GetComponent<Animator>() != null)
                     objectAttached.GetComponent<Animator>().SetTrigger("Passive");
         }
     }
+    
+    public void Activation(GameObject attached)
+    {
+        SpriteRenderer renderObjectAttached = attached.GetComponent<SpriteRenderer>();
+        Collider2D colliderObject = attached.GetComponent<Collider2D>();
 
+        if (!objectHasCollider && colliderObject != null)
+        {
+            colliderObject.enabled = true;
+            objectHasCollider = true;
+        }
+        renderObjectAttached.color = fullColorObject;
+        int quantityChildsObject = attached.transform.childCount;
+        if (quantityChildsObject != 0)
+        {
+            for (int i = 0; i < quantityChildsObject; i++)
+            {
+                Activation(attached.transform.GetChild(i).gameObject);
+            }
+        }
+    }
 }
