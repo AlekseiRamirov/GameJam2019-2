@@ -12,7 +12,7 @@ public class Platform : MonoBehaviour
     private PaintBar paintBar;
 
     [SerializeField]
-    private SplashPaintController splashPaintController;
+    private Animator splashPaintController;
 
     private SpriteRenderer renderObjectAttached;
     private Collider2D colliderObject;
@@ -44,8 +44,10 @@ public class Platform : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && checkPlatform)
         {
             paintBar.LosePaint(quantityPaintLose);
-            Paint();
-            paintBar.GameOver();
+            splashPaintController.SetTrigger("Splash");
+            //Paint();
+            if (paintBar.GetQuantityPaint() <= 0)
+                PlayerMain.Restart();
         }
     }
     void OnPaint()
@@ -66,15 +68,7 @@ public class Platform : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            paintBar.LosePaint(quantityPaintLose);
-            Paint();
-            if (paintBar.GetQuantityPaint() <= 0)
-                PlayerMain.Restart();
-        }
         checkPlatform = true;
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -95,7 +89,6 @@ public class Platform : MonoBehaviour
                 colliderObject.enabled = true;
                 objectHasCollider = true;
             }
-            splashPaintController.PlayAnimationSplash();
             renderObjectAttached.color = fullColorObject;
             objectIsPainted = true;
         }

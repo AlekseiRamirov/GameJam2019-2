@@ -42,7 +42,7 @@ public class PlayerMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -10)
+        if (transform.position.y < -10 || transform.position.y > 7)
             Restart();
     }
 
