@@ -84,13 +84,14 @@ public class Platform : MonoBehaviour
     {
         if (objectAttached.name == nameObject)
         {
-            if (!objectHasCollider)
+            if (!objectHasCollider && colliderObject != null)
             {
                 colliderObject.enabled = true;
                 objectHasCollider = true;
             }
             renderObjectAttached.color = fullColorObject;
             objectIsPainted = true;
+            objectAttached.GetComponent<Animator>().SetTrigger("Passive");
         }
     }
 

@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class TransitionMain : MonoBehaviour
 {
 
-    public bool move = true, restart = false;
+    bool move = true;
+    float mode = 0;
     public float speed = 1;
+    string nextScene;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +23,13 @@ public class TransitionMain : MonoBehaviour
         if (move)
         {
             transform.position += Vector3.down * speed; 
-            if (transform.position.y <= 0 && restart)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (transform.position.y <= 0)
+                switch(mode)
+                {
+                    case 1: SceneManager.LoadScene(SceneManager.GetActiveScene().name); break;
+                    case 2: SceneManager.LoadScene(nextScene); break;
+                }
+                
             if (transform.position.y < -14)
             {
                 transform.position = Vector3.up * 14;
@@ -33,11 +40,22 @@ public class TransitionMain : MonoBehaviour
 
     public void Restart()
     {
-        if (!restart)
+        if (mode != 1)
         {
             move = true;
-            restart = true;
+            mode = 1;
             transform.position = Vector3.up * 14;
         }
     }
+    public void Win(string nextScene)
+    {
+        if (mode != 2)
+        {
+            this.nextScene = nextScene;
+            move = true;
+            mode = 2;
+            transform.position = Vector3.up * 14;
+        }
+    }
+
 }

@@ -61,6 +61,11 @@ public class PlayerMain : MonoBehaviour
         GameObject.Find("Transition").GetComponent<TransitionMain>().Restart();
     }
 
+    public static void Win(string nextScene)
+    {
+        GameObject.Find("Transition").GetComponent<TransitionMain>().Win(nextScene);
+    }
+
     void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Platform")
