@@ -24,6 +24,7 @@ public class Platform : MonoBehaviour
     private string nameObject;
     public int quantityPaintLose;
     private bool checkPlatform = false;
+    private int quantityChildsObject;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,14 @@ public class Platform : MonoBehaviour
         renderObjectAttached.color = unAlphaObject;
         nameObject = objectAttached.name;
         if(colliderObject != null)colliderObject.enabled = false;
+        quantityChildsObject = objectAttached.GetComponentsInChildren<SpriteRenderer>().Length;  
+        for (int i = 0; i < quantityChildsObject; i++)
+        {
+            if (objectAttached.transform.GetChild(i).GetComponent<SpriteRenderer>() != null && objectAttached.transform.childCount > 0)
+            {
+                objectAttached.transform.GetChild(i).GetComponent<SpriteRenderer>().color = unAlphaObject;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -61,6 +70,10 @@ public class Platform : MonoBehaviour
         {
             //Debug.Log("Aca entra");
                 renderObjectAttached.color = silhouetteObjectAttached;
+            for (int i = 0; i < objectAttached.GetComponentsInChildren<SpriteRenderer>().Length; i++)
+            {
+                objectAttached.GetComponentInChildren<SpriteRenderer>().color = silhouetteObjectAttached;
+            }
             
         }
             
