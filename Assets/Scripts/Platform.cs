@@ -95,7 +95,7 @@ public class Platform : MonoBehaviour
                 colliderObject.enabled = true;
                 objectHasCollider = true;
             }
-            splashPaintController.PlayAnimationSplash();
+            //splashPaintController.PlayAnimationSplash();
             renderObjectAttached.color = fullColorObject;
             objectIsPainted = true;
         }
