@@ -22,7 +22,7 @@ public class Platform : MonoBehaviour
     private bool objectHasCollider = false;
     private bool objectIsPainted = false;
     private string nameObject;
-    private int quantityPaintLose;
+    public int quantityPaintLose;
     private bool checkPlatform = false;
 
     // Start is called before the first frame update
